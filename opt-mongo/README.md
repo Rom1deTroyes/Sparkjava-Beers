@@ -48,7 +48,7 @@ Let's begin with `getBeer`:
 		
 		Document beerDocument = beers.find(Filters.eq("id", id)).first();
 		
-		Beer beer = gson.fromJson(beerDocument.toJson(), Beer.class);
+		Beer beer = new Gson().fromJson(beerDocument.toJson(), Beer.class);
 		
 		return beer.toJSONDetail();
 	}
